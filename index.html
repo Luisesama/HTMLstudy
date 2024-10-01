@@ -1,41 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <div style="
-        color: #BC8F8F;
-        text-align: center;
-        padding: 40px;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex 布局</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: #f8d9d9;
+      }
+      /* * {
+        border: 1px solid black;
+      } */
+      .yy {
+        box-shadow: 0px 2px 1px -1px rgba(53, 19, 19, 0.2),
+          0px 1px 1px 0px rgba(105, 82, 82, 0.14),
+          0px 1px 3px 0px rgba(135, 100, 100, 0.12);
+      }
+      .flex {
+        display: flex;
+      }
+      .baiSe {
+        background-color: rgb(255, 255, 255);
+      }
+      .fenSe {
+        background-color: #f5c4c4;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      .toubu {
+        margin: 10px;
+        font-size: medium;
+        font-style: italic;
+        color: #ffffff;
+      }
+      .Daohang {
+        padding: 10px 10px;
+        font-size: 14px;
+        border-bottom: 1px solid #858080;
+        color: #695353;
+      }
+      @media (max-width: 600px) {
+        .ceBian {
+          display: none;
+        }
+        .neiRong {
+          flex-direction: column;
+        }
+        .youQu {
+          margin-left: 10px;
+        }
+        .shuJu {
+          margin: 0 0 4px;
+          flex: auto;
+        }
+        .suoFang {
+          margin-bottom: 10px;
+          margin-right: 15px;
+          font-size: smaller;
+        }
+        .xinXi {
+          color: #e5b3b3;
+        }
+      }
+    </style>
+  </head>
 
-        <img src=" https://cn.bing.com/images/search?view=detailV2&ccid=CReFaR34&id=43693A0ACB5B684F933D52150CA3B64F67850BCC&thid=OIP.CReFaR34YB1D6sXmrNpTNgAAAA&mediaurl=https%3a%2f%2fts1.cn.mm.bing.net%2fth%2fid%2fR-C.091785691df8601d43eac5e6acda5336%3frik%3dzAuFZ0%252b2owwVUg%26riu%3dhttp%253a%252f%252fimg.touxiangwu.com%252fuploads%252fallimg%252f2022053117%252f0n0puxsyozb.jpg%26ehk%3dk1MyZOCG%252b9N0icGOU7cVpvYXNBo%252b0iEunl%252bPTS28HvU%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&exph=420&expw=420&q=%e5%a4%b4%e5%83%8f&simid=608008730997426236&FORM=IRPRST&ck=824B35FCDBBACF71715787996D74A13F&selectedIndex=0&itb=0" 
-        alt="Luise" width="80px" height="80px">
+  <body class="flex">
+    <!-- 侧边栏 -->
+    <div style="width: 200px; z-index: 2" class="baiSe yy ceBian">
+      <!-- 头像栏 -->
+      <div
+        style="
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 2px solid #c5bebe;
+        "
+        class="flex fenSe"
+      >
+        <img
+          src="https://c-ssl.duitang.com/uploads/item/202002/24/20200224134916_srerd.jpg"
+          alt="Luise"
+          width="40px"
+          height="40px"
+        />
+        <div style="margin-left: 10px; color: #6f6969">Islands of God</div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="flex1">
+        <div class="Daohang">首页</div>
+        <div class="Daohang">地图</div>
+        <div class="Daohang">机构</div>
+        <div class="Daohang">人员</div>
+      </div>
     </div>
-
-    <div style="
-        max-width: 700px;
-        margin: 30px auto;
-        padding: 15px;
-        line-height: 1.7;
-    ">
-        <p>这是一个网站</p>
-        <p>这是一个网站</p>
-        <p>这真的是一个网站</p>
-        <p></p>
-        <p></p>
+    <!-- 主区域 -->
+    <div class="flex1 flex column">
+      <!-- 头部栏 -->
+      <div
+        style="height: 60px; z-index: 1; justify-content: end; align-items: end"
+        class="baiSe yy flex fenSe"
+      >
+        <div class="toubu suoFang">setting</div>
+        <div class="toubu suoFang">about</div>
+      </div>
+      <!-- 内容区 -->
+      <div style="overflow: auto" ; class="flex1 flex neiRong">
+        <!-- 左区 -->
+        <div style="flex: 3" class="flex column mg8">
+          <!-- 数据区 -->
+          <div class="flex xinXi">
+            <!-- 数据块 -->
+            <div style="height: 100px;justify-content: center;align-items: center;color: #514040;font-size: small;" class="flex flex1 shuJu baiSe yy mgr8">周报</div>
+            <div style="height: 100px;justify-content: center;align-items: center;color: #514040;font-size: small;" class="flex flex1 shuJu baiSe yy mgr8">要闻</div>
+            <div style="height: 100px;justify-content: center;align-items: center;color: #514040;font-size: small;" class="flex flex1 shuJu baiSe yy mgr8">故事</div>
+            <div style="height: 100px;justify-content: center;align-items: center;color: #514040;font-size: small;" class="flex flex1 shuJu baiSe yy">商店</div>
+          </div>
+          <!-- 列表区 -->
+          <div class="flex column">
+            <!-- 列表项 -->
+            <div style="height: 180px" class="baiSe yy mgt8"></div>
+            <div style="height: 180px" class="baiSe yy mgt8"></div>
+            <div style="height: 180px" class="baiSe yy mgt8"></div>
+            <div style="height: 180px" class="baiSe yy mgt8"></div>
+            <div style="height: 180px" class="baiSe yy mgt8"></div>
+            <div style="height: 180px" class="baiSe yy mgt8"></div>
+            <div style="height: 180px" class="baiSe yy mgt8"></div>
+            <div style="height: 180px" class="baiSe yy mgt8"></div>
+            
+          </div>
+        </div>
+        <!-- 右区 -->
+        <div style="flex: 1" class="flex column mgr8 mgt8 youQu">
+          <!-- 提示区 -->
+          <div style="height: 150px" class="baiSe yy">
+            <div style="justify-content: space-evenly;align-items: center;" class="flex column">
+              <p style="color: #e5b3b3;">WELCOME!!</p>
+              <p style="color: #f5c4c4;">WELCOME!!</p>
+              <p style="color: #f3cccc;">WELCOME!!</p>
+            </div>
+          </div>
+          <!-- 消息区 -->
+          <div style="height: 300px" class="baiSe yy mgt8">
+             <div style="justify-content: space-evenly;align-items: center;" class="flex column">
+              <p style="color: #88442b;font-size: larger;background-color: #eccfd7;">On SALE</tr></p>
+              <p style="color: #e47a8e;font-size:medium">天马行空粉<br>(评级:C)</p>
+              <p style="color: #d6327f; font-size: 20px;"><b>火热销售中</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div style="
-    color: #BC8F8F;
-    text-align: center;
-    padding: 40px;
-    font-size: 12px;">
-        <p>我的网站</p>
-
-    </div>
-</body>
+  </body>
 </html>
