@@ -18,6 +18,26 @@
           0px 1px 1px 0px rgba(105, 82, 82, 0.14),
           0px 1px 3px 0px rgba(135, 100, 100, 0.12);
       }
+      .anniu{
+        display: inline-block;
+        padding: 2px 15px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;   
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #eaa7b6;
+        border: none;
+        border-radius: 4px;
+        box-shadow: 0 5px #a47680;
+      }
+      .anniu:hover {background-color: #d696a2}
+      .anniu:active {
+        background-color: #eaa7b6;
+        box-shadow: 0 5px #a47680;
+        transform: translateY(3px);
+      }      
       .flex {
         display: flex;
       }
@@ -161,10 +181,22 @@
               <p style="color: #88442b;font-size: larger;background-color: #eccfd7;">On SALE</tr></p>
               <p style="color: #e47a8e;font-size:medium">天马行空粉<br>(评级:C)</p>
               <p style="color: #d6327f; font-size: 20px;"><b>火热销售中</b></p>
+              <p style="color: #f385b8; font-size: 15px;">点击预定</p>
+              <button class="anniu" id="bkn" onclick="book()">0</button>
+              <script>
+                function book(){
+                let bookNumberbq = window.document.getElementById('bkn')
+                let bkns = parseInt(bookNumberbq.innerText) //因为浏览器获取的标签内容为文本格式
+                let newnumber = bkns + 1
+                bookNumberbq.innerText = newnumber
+                return
+                }
+              </script>
             </div>
           </div>
         </div>
       </div>
     </div>
+
   </body>
 </html>
